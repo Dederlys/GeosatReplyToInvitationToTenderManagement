@@ -1,0 +1,71 @@
+<h1>Service <b *ngIf="selectedDepartment">{{selectedDepartment.name}}</b></h1>
+<div class='row'>
+    <p>Choisissez le document à éditer.</p>
+    <table>
+        <tr>
+            <td>
+                <ul class='nav navbar-nav'>
+                    <li [routerLinkActive]="['link-active']">
+                        <a [routerLink]="['../select-people']">
+                            Moyens humains
+                        </a>
+                    </li>
+                </ul>
+            </td>
+            <td>
+                <ul class='nav navbar-nav'>
+                    <li [routerLinkActive]="['link-active']">
+                        <a [routerLink]="['../select-means']">
+                            Moyens matériels
+                        </a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+<nav class='row'>
+    <ul class='nav navbar-nav'>
+        <li [routerLinkActive]="['link-active']">
+            <a [routerLink]="['../select-department']">
+                Retour
+            </a>
+        </li>
+    </ul>
+</nav>
+<div class='row' *ngIf="selectedPeople?.length > 0 || selectedEquipments?.length > 0">
+    <p><b>Actuellement sélectionné</b></p>
+    <table>
+        <tr>
+            <td *ngIf="selectedPeople?.length > 0">Moyens humains</td>
+            <td *ngIf="selectedEquipments?.length > 0">Moyens matériels</td>
+            <td *ngIf="selectedDepartment">
+                <button type="button" (click)="downloadArchive()">Télécharger</button>
+            </td>
+        </tr>
+        <tr>
+            <td *ngIf="selectedPeople?.length > 0">
+                <div class="scrollable" *ngIf="selectedPeople?.length > 0">
+                    <table class="mylistitems">
+                        <tr *ngFor="let person of selectedPeople">
+                            <td class="mylistitem">
+                                <span class="badge">{{person.id}}</span> {{person.firstName}} {{person.lastName}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td *ngIf="selectedEquipments?.length > 0">
+                <div class="scrollable" *ngIf="selectedEquipments?.length > 0">
+                    <table class="mylistitems">
+                        <tr *ngFor="let equipment of selectedEquipments">
+                            <td class="mylistitem">
+                                {{equipment.name}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

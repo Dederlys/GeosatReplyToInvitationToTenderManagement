@@ -1,0 +1,18 @@
+<table class="col-sm-7">
+    <tr>
+      <td>
+        <h3>Présentation de l'entreprise</h3>
+      </td>
+      <td *ngIf="fileExists">
+        <button (click)="downloadPresentation()"><span class="glyphicon glyphicon-download"></span> Télécharger</button>
+      </td>
+      <td>
+        <label><span class="glyphicon glyphicon-upload"></span> Importer</label>
+        <input type="file" id="newPresentation" (change)="onFileChange($event)" />
+        
+      </td>
+      <td>
+        <button (click)="sendNewPresentation()">Valider</button>
+      </td>
+    </tr>
+  </table>

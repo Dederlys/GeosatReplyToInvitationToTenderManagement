@@ -1,0 +1,23 @@
+<div class='container-fluid'>
+
+    <h1>Gestion des données</h1>
+
+    <ul class='nav navbar-nav'>
+        <li [routerLinkActive]="['link-active']">
+            <a [routerLink]="['../company-information']">
+                <span class='glyphicon glyphicon-th-list'></span> Entreprise
+            </a>
+        </li>
+        <li [routerLinkActive]="['link-active']">
+            <a [routerLink]="['../employees']">
+                <span class='glyphicon glyphicon-th-list'></span> Employés
+            </a>
+        </li>
+
+        <li [routerLinkActive]="['link-active']">
+            <a [routerLink]="['../equipments']">
+                <span class='glyphicon glyphicon-th-list'></span> Équipement
+            </a>
+        </li>
+    </ul>
+</div>

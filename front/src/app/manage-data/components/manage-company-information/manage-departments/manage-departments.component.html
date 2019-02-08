@@ -1,0 +1,18 @@
+<h3>Pôles</h3>
+
+<div class="container">
+  <div class="row">
+    <table>
+      <tr *ngFor="let department of departments">
+        <td>{{department.name}}</td>
+        <td><button (click)="deleteDepartment(department)">Suppr</button></td>
+      </tr>
+    </table>
+  </div>
+  <div class="row">
+    <form (ngSubmit)="addDepartment()">
+      <input [(ngModel)]="newDepartment.name" name="name" placeholder="Nouveau pôle" />
+      <input type="submit" value="Valider" />
+    </form>
+  </div>
+</div>

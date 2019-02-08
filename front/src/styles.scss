@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* List CSS style */
+.selected {
+    background-color: #CFD8DC !important;
+    color: white;
+  }
+  .mylistitems {
+    margin: 0 2em;
+    list-style-type: none;
+    padding: 0;
+    width: 20em;
+  }
+  .mylistitems .mylistitem {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    margin: .5em;
+    padding: 0 1em 0;
+    height: 2em;
+    border-radius: 4px;
+  }
+  .mylistitems .mylistitem.selected:hover {
+    background-color: #BBD8DC !important;
+    color: white;
+  }
+  .mylistitems .mylistitem:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+  }
+  .mylistitems .badge {
+    display: inline-block;
+    font-size: small;
+    color: white;
+    padding: .5em .5em;
+    background-color: #607D8B;
+    line-height: 1em;
+    position: relative;
+    left: -1px;
+    top: 0;
+    height: 2.1em;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+  }
+  .scrollable {
+    height: 300px;
+    overflow: auto;
+  }
+ 

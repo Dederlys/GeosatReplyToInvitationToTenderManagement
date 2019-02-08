@@ -1,0 +1,161 @@
+<h1>Ajout d'un nouvel employé</h1>
+
+<div *ngIf="!checkIsValidEmployee() && showAlertBox" class="alert alert-danger">
+  <strong>Employé invalide : </strong> Veuillez remplir les champs marqués d'une étoile.
+</div>
+
+<table>
+  <tr>
+    <td>
+      <label>Nom * </label>
+      <input [(ngModel)]="newEmployee.lastName" />
+    </td>
+    <td>
+      <label>Prénom * </label>
+      <input [(ngModel)]="newEmployee.firstName" />
+    </td>
+    <td>
+      <label>Date d'arrivée * </label>
+      <input [(ngModel)]="dayArrival" placeholder="JJ" />
+      /
+      <input [(ngModel)]="monthArrival" placeholder="MM" />
+      /
+      <input [(ngModel)]="yearArrival" placeholder="AAAA" />
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <label>Service * </label>
+      <select [(ngModel)]="newEmployee.department">
+        <option *ngFor="let department of allDepartments" [value]="department.name">
+          {{department.name}}
+        </option>
+      </select>
+    </td>
+    <td>
+      <label>Poste * </label>
+      <input [(ngModel)]="newEmployee.position" />
+    </td>
+    <td>
+      <label>Pays d'origine * </label>
+      <input [(ngModel)]="newEmployee.nationality" />
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <label>Site de rattachement * </label>
+      <select [(ngModel)]="newEmployee.affiliateOffice">
+        <option *ngFor="let location of allLocations" [value]="location.name">
+          {{location.name}}
+        </option>
+      </select>
+    </td>
+    <td>
+      <label>Type de contrat * </label>
+      <select [(ngModel)]="newEmployee.contractType">
+        <option *ngFor="let contractType of allContractTypes" [value]="contractType.name">
+          {{contractType.name}}
+        </option>
+      </select>
+    </td>
+
+    <td>
+      <label>Fin du contrat</label>
+      <input [(ngModel)]="dayEndOfContract" placeholder="JJ" />
+      /
+      <input [(ngModel)]="monthEndOfContract" placeholder="MM" />
+      /
+      <input [(ngModel)]="yearEndOfContract" placeholder="AAAA" />
+    </td>
+
+  </tr>
+
+  <tr>
+    <td>
+      <label>Numéro d'identification * </label>
+      <input [(ngModel)]="newEmployee.idNumber" />
+    </td>
+    <td>
+    </td>
+    <td>
+      <label>Type de documents d'identité * </label>
+      <select [(ngModel)]="newEmployee.identityPapersType">
+        <option *ngFor="let identitiyPapersType of allIdentityPapersTypes" [value]="identitiyPapersType.name">
+          {{identitiyPapersType.name}}
+        </option>
+      </select>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <label>Responsable hiérarchique</label>
+      <select [(ngModel)]="newEmployeeSupervisor">
+        <option *ngFor="let supervisor of allEmployees" [ngValue]="supervisor">
+          {{supervisor.firstName}} {{supervisor.lastName}}
+        </option>
+      </select>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <label>CV * </label>
+      <input type="file" id="resume" (change)="onResumeChange($event)" />
+    </td>
+    <td>
+      <label>Biographie * </label>
+      <input type="file" id="biography" (change)="onBiographyChange($event)" />
+    </td>
+    <td>
+      <label>Diplômes * </label>
+      <input type="file" id="diplomas" (change)="onDiplomasChange($event)" />
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <label>Habilitations</label>
+      <table>
+        <tr *ngFor="let authorization of newEmployee.authorizations">
+          <td>{{authorization}}</td>
+          <td><button (click)="deleteAuthorization(authorization)">Suppr</button></td>
+        </tr>
+        <tr *ngIf="showNewAuthorization">
+          <td>
+            <select [(ngModel)]="newAuthorization">
+              <option *ngFor="let authorization of allAuthorizations" [value]="authorization.name">
+                {{authorization.name}}
+              </option>
+            </select>
+          </td>
+          <td>
+            <button (click)="addNewAuthorization()">Valider</button>
+          </td>
+        </tr>
+      </table>
+      <button (click)="showNewAuthorization = true">Nouvelle habilitation</button>
+    </td>
+  </tr>
+
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>
+      <button (click)="addEmployee()">Ajouter</button>
+    </td>
+  </tr>
+</table>
+
+<nav class='row'>
+  <ul class='nav navbar-nav'>
+    <li [routerLinkActive]="['link-active']">
+      <a [routerLink]="['../employees']">
+        Retour
+      </a>
+    </li>
+  </ul>
+</nav>

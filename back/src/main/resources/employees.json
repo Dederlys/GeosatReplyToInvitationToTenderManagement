@@ -1,0 +1,47 @@
+[
+	{
+		"firstName": "Xavier",
+		"lastName": "Moreto",
+		"department": "2d3d",
+		"arrivalDate": "2012-12-12",
+		"nationality": "France",
+		"contractType": "CDI",
+		"position": "Géomètre-Expert",
+		"affiliateOffice": "Pessac",
+		"idNumber": "010101010101010101",
+		"endContractDate": null,
+		"authorizations": ["chimique"],
+		"supervisor": "Hélène Cutie",
+		"supervisorIdentifier": "010101010101010103_France"
+	},
+	{
+		"firstName": "Elise",
+		"lastName": "Rubio",
+		"department": "2d3d",
+		"arrivalDate": "0666-06-06",
+		"nationality": "France",
+		"contractType": "CDI",
+		"position": "Ingénieur",
+		"affiliateOffice": "Paris",
+		"idNumber": "010101010101010102",
+		"endContractDate": null,
+		"authorizations": [],
+		"supervisor": "Hélène Cutie",
+		"supervisorIdentifier": "010101010101010103_France"
+	},
+	{
+		"firstName": "Hélène",
+		"lastName": "Cutie",
+		"department": "2d3d",
+		"arrivalDate": "1980-03-29",
+		"nationality": "France",
+		"contractType": "CDI",
+		"position": "Ingénieur",
+		"affiliateOffice": "Paris",
+		"idNumber": "010101010101010103",
+		"endContractDate": null,
+		"authorizations": [],
+		"supervisor": null,
+		"supervisorIdentifier": null
+	}
+]

@@ -1,0 +1,32 @@
+<h1>Choix des moyens humains</h1>
+<app-popup-person></app-popup-person>
+<table>
+  <tr>
+    <td>
+      <app-search-people [calledFrom]="componentName"></app-search-people>
+    </td>
+    <td>
+      <div class="scrollable" *ngIf="selectedPeople?.length > 0">
+        <table class="mylistitems">
+          <tr *ngFor="let person of selectedPeople">
+            <td class="mylistitem" (click)="onSelectRemove(person)">
+              {{person.firstName}} {{person.lastName}}
+            </td>
+            <td>
+              <button type="button" (click)="showDetail(person)">fiche</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+<nav>
+  <ul class="nav navbar-nav">
+    <li [routerLinkActive]="['link-active']">
+      <a [routerLink]="['../select-document']">
+        Retour
+      </a>
+    </li>
+  </ul>
+</nav>

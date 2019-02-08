@@ -1,0 +1,22 @@
+<h3>Sites</h3>
+
+<div class="container">
+    <div class="row">
+      <table>
+        <tr *ngFor="let location of locations">
+          <td>
+            {{location.name}}
+          </td>
+          <td>
+            <button (click)="deleteLocation(location)">Suppr</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="row">
+      <form (ngSubmit)="addLocation()">
+        <input [(ngModel)]="newLocation.name" name="name" placeholder="Nouveau site"/>
+        <input type="submit" value="Valider" />
+      </form>
+    </div>
+  </div>

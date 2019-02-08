@@ -1,0 +1,16 @@
+[
+	{
+		"name": "Tractopelle",
+		"department": "2d3d",
+		"location": "Pessac",
+		"neededAuthorizations": [],
+		"arrivalDate": "2013-08-15"
+	},
+	{
+		"name": "Sniper",
+		"department": "topo",
+		"location": "Paris",
+		"neededAuthorizations": [],
+		"arrivalDate": "2000-01-01"
+	}
+]

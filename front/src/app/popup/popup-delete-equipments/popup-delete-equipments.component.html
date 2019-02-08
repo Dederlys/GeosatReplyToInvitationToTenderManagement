@@ -1,0 +1,15 @@
+<div *ngIf="isShownDetail">
+    <div class="popup">
+      <h3>Attention !</h3>
+      <p>Vous vous apprêtez à supprimer le(les) matériel(s) suivant(s) de la base de données :</p>
+      <ul *ngFor="let equipment of equipmentsToDelete">
+        <li>
+          {{equipment.name}}
+        </li>
+      </ul>
+      <p>Souhaitez-vous vraiment confirmer ? Cette action est irréversible.</p>
+      <button type="button" (click)="deleteEquipments()">Supprimer</button>
+      <button type="button" (click)="closeDetail()">Anuler</button>
+    </div>
+    <div class="overlay"></div>
+  </div>

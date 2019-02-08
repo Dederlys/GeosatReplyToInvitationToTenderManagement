@@ -1,0 +1,23 @@
+<h3>Habilitations</h3>
+
+<div class="container">
+  <div class="row">
+    <table>
+      <tr *ngFor="let authorization of authorizations">
+        <td>
+          {{authorization.name}}
+        </td>
+        <td>
+          <button (click)="deleteAuthorization(authorization)">Suppr</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="row">
+    <form (ngSubmit)="addAuthorization()">
+      <input [(ngModel)]="newAuthorization.name" name="name" placeholder="Nouvelle habilitation" />
+      <input name="file" (change)="onFileChange($event)" type="file" />
+      <input type="submit" value="Valider" />
+    </form>
+  </div>
+</div>

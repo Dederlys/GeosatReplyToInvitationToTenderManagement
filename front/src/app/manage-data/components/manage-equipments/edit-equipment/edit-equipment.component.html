@@ -1,0 +1,104 @@
+<h1>Modification de l'équipment <b>{{equipment.name}}</b></h1>
+
+<table>
+    <!--
+        <tr>
+        <td>
+            <label>Nom * </label>
+            <input [(ngModel)]="equipment.name" />
+        </td>
+    Not functionnal for now because name is the id
+    </tr>
+-->
+
+    <tr>
+        <td>
+            <label>Date d'arrivée * </label>
+            <input [(ngModel)]="dayArrival" placeholder="JJ" />
+            /
+            <input [(ngModel)]="monthArrival" placeholder="MM" />
+            /
+            <input [(ngModel)]="yearArrival" placeholder="AAAA" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label>Service * </label>
+            <select [(ngModel)]="equipment.department">
+                <option *ngFor="let department of allDepartments" [value]="department.name">
+                    {{department.name}}
+                </option>
+            </select>
+    </tr>
+
+    <tr>
+        <td>
+            <label>Site de rattachement * </label>
+            <select [(ngModel)]="equipment.location">
+                <option *ngFor="let location of allLocations" [value]="location.name">
+                    {{location.name}}
+                </option>
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label>Description du constructeur</label> <br />
+            <button (click)="downloadConstructorFile()"><span class="glyphicon glyphicon-download"></span> 
+                Télécharger</button>   
+            <input type="file" id="constructorFile" (change)="onConstructorFileChange($event)" />
+        </td>
+        <td>
+            <label>Fiche d'informations du matériel</label> <br />
+            <button (click)="downloadInfoFile()"><span class="glyphicon glyphicon-download"></span> 
+                Télécharger</button>   
+            <input type="file" id="infoFile" (change)="onInfoFileChange($event)" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label>Habilitations</label>
+            <table>
+                <tr *ngFor="let authorization of equipment.neededAuthorizations">
+                    <td>{{authorization}}</td>
+                    <td><button (click)="deleteAuthorization(authorization)">Suppr</button></td>
+                </tr>
+                <tr *ngIf="showNewAuthorization">
+                    <td>
+                        <select [(ngModel)]="newAuthorization">
+                            <option *ngFor="let authorization of allAuthorizations" [value]="authorization.name">
+                                {{authorization.name}}
+                            </option>
+                        </select>
+                    </td>
+                    <td>
+                        <button (click)="addNewAuthorization()">Valider</button>
+                    </td>
+                </tr>
+            </table>
+            <button (click)="showNewAuthorization = true">Nouvelle habilitation</button>
+        </td>
+        <td>
+
+        </td>
+        <td>
+
+        </td>
+        <td>
+            <button (click)="editEquipment()">Valider</button>
+        </td>
+    </tr>
+</table>
+
+<nav class='row'>
+    <ul class='nav navbar-nav'>
+        <li [routerLinkActive]="['link-active']">
+            <a [routerLink]="['../equipments']">
+                Retour
+            </a>
+        </li>
+    </ul>
+</nav>

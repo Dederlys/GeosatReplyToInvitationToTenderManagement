@@ -1,0 +1,52 @@
+<app-popup-person></app-popup-person>
+<app-popup-delete-people></app-popup-delete-people>
+<div class='container-fluid'>
+
+  <div class='row'>
+    <div class='col-sm-12'>
+      <app-manage-data-header></app-manage-data-header>
+    </div>
+  </div>
+
+  <div class='row'>
+    <table>
+      <td>
+        <app-search-people [calledFrom]="componentName"></app-search-people>
+      </td>
+      <td>
+        <div class="scrollable" *ngIf="employeesToManage?.length > 0">
+          <table class="mylistitems">
+            <tr *ngFor="let person of employeesToManage">
+              <td class="mylistitem" (click)="onSelectRemove(person)">
+                {{person.firstName}} {{person.lastName}}
+              </td>
+              <td>
+                <button type="button" (click)="showDetail(person)">fiche</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </table>
+  </div>
+
+  <nav class='row'>
+    <table>
+      <tr>
+        <td>
+          <button (click)="newEmployee()">
+            Nouveau
+          </button>
+        </td>
+        <td>
+          <button *ngIf="employeesToManage?.length == 1" (click)="editEmployee()">
+            Modifier
+          </button>
+        </td>
+        <td>
+          <button *ngIf="employeesToManage?.length > 0" (click)="deleteEmployees()">
+            Supprimer la sélection
+          </button>
+        </td>
+      </tr>
+    </table>

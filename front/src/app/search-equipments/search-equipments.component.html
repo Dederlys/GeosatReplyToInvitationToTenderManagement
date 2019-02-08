@@ -1,0 +1,13 @@
+<input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="Rechercher..." />
+<div class="scrollable">
+  <table class="search-result mylistitems">
+    <tr *ngFor="let equipment of equipments">
+      <td class="mylistitem" (click)="onSelect(equipment)">
+        {{equipment.name}}
+      </td>
+      <td>
+        <button type="button" (click)="showDetail(equipment)">fiche</button>
+      </td>
+    </tr>
+  </table>
+</div>

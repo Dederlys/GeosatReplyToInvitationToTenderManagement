@@ -1,0 +1,21 @@
+<div *ngIf="isShownDetail">
+  <div class="popup" *ngIf="detailsOnEquipment">
+    <h3 *ngIf="detailsOnEquipment">{{detailsOnEquipment.name}}</h3>
+
+    <b>Département :</b> {{detailsOnEquipment.department}}<br />
+    <b>Localisation :</b> {{detailsOnEquipment.location}}<br />
+
+    <b>Autorisations :</b>
+    <span *ngIf="detailsOnEquipment.neededAuthorizations">
+    <ul *ngFor="let auth of detailsOnEquipment.neededAuthorizations">
+        <li>{{auth}}</li>
+    </ul>
+    </span>
+    <span *ngIf="detailsOnEquipment.neededAuthorizations.length == 0"> Pas d'autorisation particulière nécessaire<br /></span>
+
+    <b>Date d'arrivée :</b> {{dayArrival}} / {{monthArrival}} / {{yearArrival}}<br />
+
+    <button type="button" (click)="closeDetail()">Retour</button>
+  </div>
+  <div class="overlay"></div>
+</div>

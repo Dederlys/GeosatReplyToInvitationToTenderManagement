@@ -1,0 +1,18 @@
+<h3>Types de papiers d'identité</h3>
+
+<div class="container">
+    <div class="row">
+      <table>
+        <tr *ngFor="let identityPapersType of identityPapersTypes">
+          <td>{{identityPapersType.name}}</td>
+          <td><button (click)="deleteIdentityPapersType(identityPapersType)">Suppr</button></td>
+        </tr>
+      </table>
+    <div class="row">
+      <form (ngSubmit)="addIdentityPapersType()">
+        <input [(ngModel)]="newIdentityPapersType.name" 
+          name="name" placeholder="Nouveau type de papiers d'identité" />
+        <input type="submit" value="Valider" />
+      </form>
+    </div>
+  </div>

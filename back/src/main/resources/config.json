@@ -1,0 +1,6 @@
+{
+	"msDatabaseFolder": "geosat_bdd",
+	"msEmployees": "employees.json",
+	"msEquipments": "equipments.json",
+	"msValueTypes": "value_types.json"
+}

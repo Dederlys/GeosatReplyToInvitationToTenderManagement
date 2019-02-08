@@ -1,0 +1,31 @@
+{
+	"mlTitles": [
+		"Carte d'identité",
+		"Permis de séjour"
+	],
+	"mlSites": [
+		"Pessac",
+		"Toulouse",
+		"Paris",
+		"Poitiers"
+	],
+	"mlContracts": [
+		"CDD",
+		"CDI",
+		"Intérim"
+	],
+	"mlPositions": [
+		"Géomètre-Expert",
+		"Ingénieur-Géometre",
+		"Ingénieur",
+		"Technicien/Dessinateur Géomètre-Topographe"
+	],
+	"mlPoles": [
+		"2d3d",
+		"mms",
+		"topo"
+	],
+	"mlAuthorizations": [
+		"chimique"
+	]
+}

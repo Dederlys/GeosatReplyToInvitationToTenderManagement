@@ -1,0 +1,56 @@
+<app-popup-equipment></app-popup-equipment>
+<app-popup-delete-equipments></app-popup-delete-equipments>
+
+<div class='container-fluid'>
+
+    <div class='row'>
+        <div class='col-sm-12'>
+            <app-manage-data-header></app-manage-data-header>
+        </div>
+    </div>
+
+    <div class='row'>
+        <table>
+            <td>
+                <app-search-equipments [calledFrom]="componentName"></app-search-equipments>
+            </td>
+            <td>
+                <div class="scrollable" *ngIf="equipmentsToManage?.length > 0">
+                    <table class="mylistitems">
+                        <tr *ngFor="let equipment of equipmentsToManage">
+                            <td class="mylistitem" (click)="onSelectRemove(equipment)">
+                                {{equipment.name}}
+                            </td>
+                            <td>
+                                <button type="button" (click)="showDetail(equipment)">fiche</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </table>
+    </div>
+
+
+    <nav class='row'>
+        <table>
+            <tr>
+                <td>
+                    <button (click)="newEquipment()">
+                        Nouveau
+                    </button>
+                </td>
+                <td>
+                    <button *ngIf="equipmentsToManage?.length == 1" (click)="editEquipment()">
+                        Modifier
+                    </button>
+                </td>
+                <td>
+                    <button *ngIf="equipmentsToManage?.length > 0" (click)="deleteEquipments()">
+                        Supprimer la sélection
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </nav>
+</div>

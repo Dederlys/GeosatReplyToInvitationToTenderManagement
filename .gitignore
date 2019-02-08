@@ -1,0 +1,8 @@
+/front/node_modules
+/front/dist/geosat/
+
+/back/target/
+/back/bin/
+/back/.classpath
+/back/.settings
+/back/.project

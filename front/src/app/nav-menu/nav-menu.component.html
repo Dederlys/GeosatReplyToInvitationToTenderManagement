@@ -1,0 +1,16 @@
+<nav class='navbar navbar-inverse'>
+    <div class="navbar-collapse collapse">
+        <ul class='nav navbar-nav'>
+            <li [routerLinkActive]="['link-active']">
+                <a [routerLink]="['/new-response']">
+                    <span class='glyphicon glyphicon-th-list'></span> Nouvelle réponse
+                </a>
+            </li>
+            <li [routerLinkActive]="['link-active']">
+                <a [routerLink]="['/manage-data']">
+                    <span class='glyphicon glyphicon-th-list'></span> Gestion des données
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

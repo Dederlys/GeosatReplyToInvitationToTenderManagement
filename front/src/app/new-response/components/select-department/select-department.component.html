@@ -1,0 +1,36 @@
+<h1>Choix du service</h1>
+<table>
+    <tr>
+        <td>
+            <div class="scrollable">
+                <table class="mylistitems">
+                    <tr *ngFor="let department of departments">
+                        <td class="mylistitem" (click)="onSelect(department)">
+                            {{department.name}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+        <td>
+            <div style="height: 200px;" *ngIf="selectedDepartment" class='mylistitems'>
+                <table class="mylistitems">
+                    <tr>
+                        <td class="mylistitem">
+                            {{selectedDepartment.name}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
+<nav *ngIf="selectedDepartment">
+    <ul class='nav navbar-nav'>
+        <li [routerLinkActive]="['link-active']">
+            <a [routerLink]="['../select-document']">
+                Choix du document
+            </a>
+        </li>
+    </ul>
+</nav>

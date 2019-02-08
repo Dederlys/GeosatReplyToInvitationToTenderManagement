@@ -1,0 +1,27 @@
+<div *ngIf="isShownDetail">
+    <div class="popup" *ngIf="detailsOnPerson">
+        <h3>{{detailsOnPerson.firstName}} {{detailsOnPerson.lastName}}</h3>
+
+            <b>Poste :</b> {{detailsOnPerson.position}}<br />
+            <b>Département :</b> {{detailsOnPerson.department}}<br />
+            <b>Lieu de travail :</b> {{detailsOnPerson.affiliateOffice}}<br />
+            <b>Superviseur :</b> {{detailsOnPerson.supervisor}}<br />
+
+            <b>Autorisations :</b>
+            <span *ngIf="detailsOnPerson.authorizations">
+            <ul *ngFor="let auth of detailsOnPerson.authorizations">
+                <li>{{auth}}</li>
+            </ul>
+            </span>
+            <span *ngIf="detailsOnPerson.authorizations.length == 0"> Pas d'autorisation particulière<br /></span>
+
+            <b>Contrat :</b> {{detailsOnPerson.contractType}}<br />
+            <span *ngIf="detailsOnPerson.endContractDate"><b>Fin du contrat :</b> {{dayEndContract}} / {{monthEndContract}} / {{yearEndContract}}<br /></span>
+            <b>Nationalité :</b> {{detailsOnPerson.nationality}}<br />
+            <b>N° d'identité :</b> {{detailsOnPerson.idNumber}}<br />
+            <b>Date d'arrivée :</b> {{dayArrival}} / {{monthArrival}} / {{yearArrival}}<br />
+
+        <button type="button" (click)="closeDetail()">Retour</button>
+    </div>
+    <div class="overlay"></div>
+</div>

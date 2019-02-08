@@ -1,0 +1,32 @@
+<h1>Choix des moyens matériels</h1>
+<app-popup-equipment></app-popup-equipment>
+<table>
+  <tr>
+    <td>
+      <app-search-equipments [calledFrom]='componentName'></app-search-equipments>
+    </td>
+    <td>
+      <div class="scrollable" *ngIf="selectedEquipments?.length > 0">
+        <table class="mylistitems">
+          <tr *ngFor="let equipment of selectedEquipments">
+            <td class="mylistitem" (click)="onSelectRemove(equipment)">
+              {{equipment.name}}
+            </td>
+            <td>
+              <button type="button" (click)="showDetail(equipment)">fiche</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+<nav>
+  <ul class='nav navbar-nav'>
+    <li [routerLinkActive]="['link-active']">
+      <a [routerLink]="['../select-document']">
+        Retour
+      </a>
+    </li>
+  </ul>
+</nav>
